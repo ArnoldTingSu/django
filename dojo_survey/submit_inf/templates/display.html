@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information displayed here!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/results.css' %}">
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <h2>Information Profile</h2>
-    <div>
-        Name: {{name}},
-        Dojo Location: {{location}},
-        Favorite Language: {{language}},
-        Comment: {{comments}}
-    </div>
+    <h1>Results</h1>
+    <div class="container">
+        <h2>Information Profile</h2>
+        <div>
+            <p>Name: {{result.name}}</p>
+            <p>Dojo Location: {{result.location}}</p>
+            <p>Favorite Language: {{result.language}}</p> 
+            <p>Comment: {{result.comment}}</p> 
+            
+        </div>
+    </div class="container">
 </body>
 </html>

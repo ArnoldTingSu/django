@@ -1,26 +1,44 @@
 from django.shortcuts import render, redirect
 
+languages = (
+    'Python',
+    'SQL',
+    'MERN',
+    'Java',
+    'Ruby'
+)
+
+locations = (
+    'Costa Mesa',
+    'Los Angeles',
+    'Irvine',
+    'San Francisco',
+    'Burbank'
+)
+
 def index(request):
-    return render(request, 'index.html')
+    context = {
+            'languages': languages,
+            'locations': locations
+        }
+    return render(request, 'index.html', context)
 
 
-def display(request):
+def form(request):
     if request.method == 'POST':
         print(request.POST)
-        print(request.POST['name'])
-        request.session['name'] = request.POST['name']
-        print(request.POST['location'])
-        request.session['location'] = request.POST['location']
-        print(request.POST['language'])
-        request.session['language'] = request.POST['language']
-        print(request.POST['comments'])
-        request.session['comments'] = request.POST['comments']
-        context = {
+        request.session['result'] = {
             'name':request.POST['name'],
             'location':request.POST['location'],
             'language':request.POST['language'],
-            'comments':request.POST['comments']
+            'comment':request.POST['comments']
         }
-        return render(request, 'display.html', context)
+        return redirect('/results')
     else:
-        return redirect(request, '/index')
+        return redirect('/')
+
+def results(request):
+    context = {
+        'result': request.session['result']
+    }
+    return render(request,'display.html', context)

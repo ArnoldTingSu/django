@@ -1,16 +1,14 @@
 
 h1{
-    color: green;
-}
-form{
-    color: red;
-    display: inline-block;
-}
-div {
-    width: 1000px;
-    height: 1000px;
+    color: blue;
 }
 
-h2{
-    text-decoration-line: black solid 1px;
+
+div.formgroup{
+    padding: 10px;
+    display:block;
+}
+
+#container > h2 {
+    border-bottom: solid 1px black;
 }
