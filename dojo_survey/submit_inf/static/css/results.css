@@ -16,3 +16,7 @@ h1{
 h2{
     text-decoration-line: underline black;
 }
+
+.back_button{
+    padding-left: 350px;
+}

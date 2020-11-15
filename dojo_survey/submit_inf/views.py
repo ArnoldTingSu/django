@@ -12,7 +12,7 @@ locations = (
     'Costa Mesa',
     'Los Angeles',
     'Irvine',
-    'San Francisco',
+    'San Diego',
     'Burbank'
 )
 
